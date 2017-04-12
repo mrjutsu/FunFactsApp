@@ -9,13 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let factProvider = FactProvider()
 
     @IBOutlet weak var funFactLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        funFactLabel.text = "An interesting fact!"
+        funFactLabel.text = factProvider.randomFact()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +26,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func showFact() {
-        funFactLabel.text = "Another interesting fact"
+        funFactLabel.text = factProvider.randomFact()
     }
 
 }
